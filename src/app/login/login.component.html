@@ -1,0 +1,26 @@
+<p>login works!</p>
+
+
+ <form [formGroup]="this.addForm">
+    <div>
+        <label>enter name</label>
+        <input type="text" formControlName="name">
+        <ng-container *ngIf="this.addForm.controls['iname'].errors as idError">
+            <p *ngIf="idError['required']">this field is must!</p>
+            <p *ngIf="idError['minlength']">this field is must at least 8 digits</p>
+        </ng-container>
+    </div>
+    <br>
+  
+    <div>
+        <br>
+        <label>passwoed</label>
+        <input type="text" formControlName="passwoed">
+        <ng-container *ngIf="this.addForm.controls['passwoed'].errors as passworedError">
+            <p *ngIf="passworedError['required']">this field is must!</p>
+        </ng-container>
+    </div>
+   
+    <!-- <button (click)="save()" [disabled]="!this.addForm.valid">save</button> -->
+</form> 
+
